@@ -16,11 +16,11 @@ const qaArray = [
         answer: "The garbage collection fee is 500, and additional charges may apply from the garbage collector. You can pay directly to the garbage collector or through the payment methods they provide."
     },
     {
-        question: "Plumbing Services",
+        question: "Plumbing Service",
         answer: "Hi, I'm Axion. How can I help you with plumbing services?",
     },
     {
-        question: "Carpentry Services",
+        question: "Carpentry Service",
         answer: "Hi, I'm Axion. How can I help you with carpentry services?",
     },
     {
@@ -30,6 +30,10 @@ const qaArray = [
     {
         question: "Who are you",
         answer: "Hi, I'm Axion. I'm here to help you with your garbage disposal, plumbing, and carpentry needs.",
+    },
+    {
+        question: "Hi",
+        answer: "Hello, I'm Axion. I'm here to help you with your garbage disposal, plumbing, and carpentry needs.",
     },
 
 ];
@@ -195,7 +199,7 @@ const fetchResponse = async (loadingElement) => {
         console.error("Fetch Error:", error);
 
         messageTextElement.innerText =
-            "We're experiencing issues processing your request. Please try again later or ask a specific question about garbage collection schedules.";
+            "We're experiencing issues processing your request. Please try again later";
         loadingElement.classList.add("message--error");
     } finally {
         loadingElement.classList.remove("message--loading");
