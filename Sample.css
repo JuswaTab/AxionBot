@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align content to the top */
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle, #2d0d41, #1b2e3a);
+    color: #fff;
+    padding-top: 40px; /* Add padding to bring content closer to the top */
+}
+
+.container {
+    text-align: center;
+    max-width: 600px; /* Increased width for single-line title */
+    padding: 20px;
+}
+
+h1 {
+    font-size: 1.5em; /* Slightly smaller to fit one line */
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 1.2;
+    white-space: nowrap; /* Ensures text stays on a single line */
+}
+
+.highlight {
+    color: #8c52ff;
+}
+
+.subtitle {
+    font-size: 1em; /* Reduced font size */
+    color: #c1c1c1;
+    margin-top: 8px; /* Reduced margin for better spacing */
+    margin-bottom: 20px;
+}
+
+.bot-image-box {
+    display: inline-block;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 20px;
+}
+
+.bot-image img{
+    width: 15em; /* Set to smaller size */
+    height: auto;
+}
+
+.start-button {
+    padding: 10px 25px;
+    font-size: 1em;
+    color: #ffffff;
+    background: none;
+    border: 2px solid #ffffff;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    text-decoration: none;
+    display: inline-block; 
+}
+
+.start-button:hover {
+    background: #8c52ff;
+    color: #ffffff;
+}
+

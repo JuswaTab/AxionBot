@@ -9,11 +9,13 @@ const qaArray = [
     },
     {
         question: "Are there any changes to the pickup schedule for holidays?",
-        answer: "There will be no waste pickups on holidays. Please plan accordingly, and refer to the updated schedule for the next available pickup date."
+        answer: "There will be no waste pickups on holidays. Please plan accordingly, and " + '\n' +
+        "refer to the updated schedule for the next available pickup date."
     },
     {
-        question: "What are the fees for garbage collection, and how can I pay?",
-        answer: "The garbage collection fee is 500, and additional charges may apply from the garbage collector. You can pay directly to the garbage collector or through the payment methods they provide."
+        question: "What are the fees for garbages collection, and how can I pay?",
+        answer: "The garbage collection fee is 500, and additional charges may apply from the garbage collector. " + '\n'+
+        "You can pay directly to the garbage collector or through the payment methods they provide."
     },
     {
         question: "Plumbing Service",
@@ -25,15 +27,38 @@ const qaArray = [
     },
     {
         question: "Who are you?",
-        answer: "Hi, I'm Axion. I'm here to help you with your garbage disposal, plumbing, and carpentry needs.",
+        answer: "Hi, I'm Axion. I'm here to help you with your garbage disposal, plumbing, and carpentry needs." + '\n' +
+        "Please note that while I strive to provide accurate information, there may be occasional inaccuracies. " +
+        '\n' + "I kindly ask that you limit your inquiries to garbage disposal, plumbing, and carpentry-related topics.",
     },
     {
         question: "Who are you",
-        answer: "Hi, I'm Axion. I'm here to help you with your garbage disposal, plumbing, and carpentry needs.",
+        answer: "Hi, I'm Axion. I'm here to help you with your garbage disposal, plumbing, and carpentry needs." + '\n' +
+        "Please note that while I strive to provide accurate information, there may be occasional inaccuracies. " +
+        '\n' + "I kindly ask that you limit your inquiries to garbage disposal, plumbing, and carpentry-related topics.",
     },
     {
         question: "Hi",
-        answer: "Hello, I'm Axion. I'm here to help you with your garbage disposal, plumbing, and carpentry needs.",
+        answer: "Hello, I'm Axion. I'm here to help you with your garbage disposal, plumbing, and carpentry needs." + '\n' +
+        "Please note that while I strive to provide accurate information, there may be occasional inaccuracies. " +
+        '\n' + "I kindly ask that you limit your inquiries to garbage disposal, plumbing, and carpentry-related topics.",
+    },
+    {
+        question: "Hello",
+        answer: "Hi, I'm Axion. I'm here to help you with your garbage disposal, plumbing, and carpentry needs." + '\n' +
+        "Please note that while I strive to provide accurate information, there may be occasional inaccuracies. " +
+        '\n' + "I kindly ask that you limit your inquiries to garbage disposal, plumbing, and carpentry-related topics."
+    },
+    {
+        question: "What is Garbage?",
+        answer: "Garbage refers to waste materials or unwanted items that are discarded because they are no longer useful, needed, or functional. "+ '\n' +
+        "It typically includes household waste such as food scraps, packaging materials, broken items, and other disposable materials." + '\n' +
+        "Garbage can be categorized into different types, such as:"
+            + '\n'+
+            " *Biodegradable Waste: Organic materials that decompose naturally over time, such as food scraps, garden waste, and paper." + '\n' +
+            " *Non-Biodegradable Waste: Materials that do not easily break down, such as plastics, metals, and glass." + '\n' +
+            " *Hazardous Waste: Substances that can be harmful to health or the environment, such as chemicals, batteries, and medical waste." + '\n' +
+            " *E-Waste: Discarded electronic devices like phones, computers, and appliances."
     },
 
 ];
@@ -136,7 +161,7 @@ const fetchResponse = async (loadingElement) => {
     );
 
     // Check if the message is related to Plumber or Carpenter services
-    if (currentUserMessage.toLowerCase().includes("plumber") || currentUserMessage.toLowerCase().includes("carpenter")) {
+    if (currentUserMessage.toLowerCase().includes("plumber") || currentUserMessage.toLowerCase().includes("carpenter") || currentUserMessage.toLowerCase().includes("plumbing") || currentUserMessage.toLowerCase().includes("carpenters") || currentUserMessage.toLowerCase().includes("plumbers")) {
         if (!address) {
             messageTextElement.innerText = "Please provide your address to proceed (e.g., Villanueva, Dayawan, San Martin).";
         } else {
@@ -199,7 +224,7 @@ const fetchResponse = async (loadingElement) => {
         console.error("Fetch Error:", error);
 
         messageTextElement.innerText =
-            "We're experiencing issues processing your request. Please try again later";
+            "We're experiencing issues processing your request. Please try again later.";
         loadingElement.classList.add("message--error");
     } finally {
         loadingElement.classList.remove("message--loading");
